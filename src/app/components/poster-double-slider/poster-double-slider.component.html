@@ -1,0 +1,27 @@
+<swiper class="swiper-modification" [config]="config">
+    <ng-template swiperSlide *ngFor="let paire of movies">
+
+
+            <ion-row>
+                <ion-col size="12" *ngFor="let movie of paire">
+    
+                        <ion-card (click)="presentDetails(movie.id)" class="poster animate__animated animate__fadeIn">
+                            <img  [src]="movie.poster_path | image">
+                        </ion-card>
+    
+                </ion-col>
+            </ion-row>
+
+
+    </ng-template>
+
+    <ng-template class="ion-padding add-more-row" swiperSlide>
+
+
+                <ion-button class="add-button" (click)="onAddMoreMovies()" expand="full" size="large">
+                    <ion-icon slot="icon-only" name="add"></ion-icon>
+                </ion-button>
+
+
+    </ng-template>
+</swiper>

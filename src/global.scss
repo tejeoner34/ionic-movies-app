@@ -24,3 +24,16 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+@import '~swiper/css/bundle';
+
+@import '~animate.css/animate.min';
+
+
+
+.poster{
+    width: 110px !important;
+    height: fit-content !important;
+    margin-top: 0 !important;
+}

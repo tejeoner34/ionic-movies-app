@@ -1,0 +1,13 @@
+<swiper [config]="config"
+>
+        <ng-template swiperSlide *ngFor="let movie of movies | async">
+
+                <ion-card (click)="presentDetails(movie.id)">
+                    <ion-img [src]="movie.backdrop_path | image"></ion-img>
+                </ion-card>
+
+        </ng-template>
+        
+
+
+    </swiper>
