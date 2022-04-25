@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MovieDetail } from 'src/app/interfaces';
 import { MoviesService } from 'src/app/services/movies.service';
 
 @Component({
@@ -9,18 +10,20 @@ import { MoviesService } from 'src/app/services/movies.service';
 export class DetailModalComponent implements OnInit {
 
     @Input() id: number;
+    movieDetail: MovieDetail;
 
 
   constructor(public moviesService: MoviesService) { }
 
   ngOnInit() {
-      console.log(this.id)
       this.moviesService.getMovieDetails(this.id).subscribe(res => {
-          console.log(res)
+          console.log(this.id);
+          this.movieDetail = res;
+          
       })
 
       this.moviesService.getMovieCast(this.id).subscribe(res => {
-          console.log(res)
+          
       })
   }
 

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Movie, MoviesAnswer } from '../interfaces';
+import { CastResponse, Movie, MovieDetail, MoviesAnswer } from '../interfaces';
 import { map } from 'rxjs/operators'
 import { environment } from 'src/environments/newEnv';
 
@@ -41,12 +41,12 @@ export class MoviesService {
 
     }
 
-    getMovieDetails(id: number){
-        return this.http.get(`${url}/movie/${id}?api_key=${api}`)
+    getMovieDetails(id: number): Observable<MovieDetail>{
+        return this.http.get<MovieDetail>(`${url}/movie/${id}?api_key=${api}`)
     }
 
-    getMovieCast(id: number){
-        return this.http.get(`${url}/movie/${id}/credits?api_key=${api}`)
+    getMovieCast(id: number): Observable<CastResponse>{
+        return this.http.get<CastResponse>(`${url}/movie/${id}/credits?api_key=${api}`)
     }
 
 }
