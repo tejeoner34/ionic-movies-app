@@ -31,10 +31,19 @@
 }
 
 .card-actor {
-    height: 210px;
+    height: 220px;
+    width: 100px;
 }
 
 .actor-name {
     position: relative;
     top:15px;
+}
+
+.actor-name__container{
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }

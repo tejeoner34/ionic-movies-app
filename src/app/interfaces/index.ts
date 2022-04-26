@@ -122,3 +122,27 @@ export interface Belongstocollection {
   poster_path: string;
   backdrop_path: string;
 }
+
+export interface MovieByNameResponse {
+  page: number;
+  results: MovieByNameResult[];
+  total_pages: number;
+  total_results: number;
+}
+
+export interface MovieByNameResult {
+  adult: boolean;
+  backdrop_path?: string;
+  genre_ids: number[];
+  id: number;
+  original_language: string;
+  original_title: string;
+  overview: string;
+  popularity: number;
+  poster_path?: string;
+  release_date: string;
+  title: string;
+  video: boolean;
+  vote_average: number;
+  vote_count: number;
+}

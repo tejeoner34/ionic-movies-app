@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { CastResponse, Movie, MovieDetail, MoviesAnswer } from '../interfaces';
 import { map } from 'rxjs/operators'
 import { environment } from 'src/environments/newEnv';
+import { MovieByNameResponse } from '../interfaces/index';
 
 const url = environment.url;
 const api = environment.api;
@@ -47,6 +48,10 @@ export class MoviesService {
 
     getMovieCast(id: number): Observable<CastResponse>{
         return this.http.get<CastResponse>(`${url}/movie/${id}/credits?api_key=${api}`)
+    }
+
+    getMoviesByName(name): Observable<MovieByNameResponse>{
+        return this.http.get<MovieByNameResponse>(`https://api.themoviedb.org/3/search/movie?api_key=${api}&query=${name}`)
     }
 
 }

@@ -37,3 +37,7 @@
     height: fit-content !important;
     margin-top: 0 !important;
 }
+
+img{
+    image-rendering: -webkit-optimize-contrast !important;
+}
